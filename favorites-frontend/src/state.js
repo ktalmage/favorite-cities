@@ -7,25 +7,29 @@ window.addEventListener('load', ()=> {
 })
 
 function getStates() {
-    let states = []
-    fetch(STATES_URL)
+   
+    return fetch(STATES_URL)
     .then(resp => resp.json())
-    .then(states => {
-        states.forEach(state => renderStates(state)
-        )
-    })
-        // addstateListener()                 
-}
-
-    function renderStates(state) {
-        let stateCard = document.createElement('div')
-        stateCard.innerHTML += `
-        <div class='card'id ='state-${state.id}'>
-        <h2>${state.name}</h2>
-        </div>
-        `
-        document.querySelector('#get-states').appendChild(stateCard)
+    .then(function(data) {
+        let states = data.data;
+        return states.map(state => state.attributes.name)
+            
+        })
     }
+    
+    
+        // addstateListener()                 
+
+
+    // function renderStates(state) {
+    //     let stateCard = document.createElement('div')
+    //     stateCard.innerHTML += `
+    //     <div class='card'id ='state-${state.id}'>
+    //     <h2>${state.name}</h2>
+    //     </div>
+    //     `
+    //     document.querySelector('#get-states').appendChild(stateCard)
+    // }
 
 
 
