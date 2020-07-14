@@ -5,4 +5,8 @@ class City {
         this.title = title;
         this.description = description;
     }
+
+
 }
+
+console.log("city")

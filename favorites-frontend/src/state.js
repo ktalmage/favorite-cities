@@ -4,3 +4,5 @@ class State {
         this.code = code;
     }
 }
+
+console.log("state")
