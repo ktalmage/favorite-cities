@@ -5,11 +5,28 @@
     <title>My Favorite Cities</title>
   </head>
   <body>
-    <div id= "get-states">
-
+    <div class= "container">
+      <h1 id="title">Favorite Cities</h1>
     </div>
-    <!-- <script type="application/javascript" src="./src/index.js" charset="UTF-8"></script> 
-    <script type="application/javascript" src="./src/city.js" charset="UTF-8"></script>  -->
+    <div id="filter-drop-down" >
+      <h2>Choose a State:</h2>
+    </div>
+    <div class="form">
+      <h2>Add a City and Experience</h2>
+      <form id="new-city-form" class="hidden">
+        <label for="city-name">City Name:</label><br>
+        <input type="text" name="city-name"><br>
+        <label for="zipcode">Enter Zip</label><br>
+        <input type="text" name="zipcode"><br>
+        <label for="description">Description</label><br>
+        <input type="text" name="description" placeholder="Describe your experience"><br>
+        <input id="form-submit" type="submit" value="Add City">
+      </form>
+    </div>
+    <div id="city-card-container">
+      </div>
+    <script type="application/javascript" src="./src/index.js" charset="UTF-8"></script> 
+    <script type="application/javascript" src="./src/city.js" charset="UTF-8"></script> 
     <script type="application/javascript" src="./src/state.js" charset="UTF-8"></script>
   </body>
 </html>
