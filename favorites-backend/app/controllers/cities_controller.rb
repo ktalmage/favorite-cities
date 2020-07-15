@@ -18,6 +18,6 @@ class CitiesController < ApplicationController
     private
 
     def city_params
-        params.require(:city).permit(:name,:zipcode,:title,:description, :state_id)
+        params.require(:city).permit(:name,:zipcode,:title,:description,:state_id)
     end
 end
