@@ -1,4 +1,4 @@
-
+const CITIES_URL = `${BASE_URL}/cities`
 class Cty {
     constuctor(city) {
         this.id = city.id;
@@ -16,12 +16,11 @@ class Cty {
 }
 
  getCities=() => {
-    fetch(`${BASE_URL}/cities`)
-.then(resp => resp.json())
-.then(data => {
-    const cityContainer = document.querySelector('#get-cities')
-    data.forEach(city => render (city))
-    addCityListeners()
+    fetch(CITIES_URL)
+    .then(resp => resp.json())
+    .then(data => {
+        data.forEach(city => renderCity(city))
+        
 
 })
     

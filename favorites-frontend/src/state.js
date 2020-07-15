@@ -1,6 +1,6 @@
 
 const STATES_URL = `${BASE_URL}/states`
-const CITIES_URL = `${BASE_URL}/cities`
+
 
 
 

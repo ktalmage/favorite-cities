@@ -10,13 +10,14 @@ class CitiesController < ApplicationController
     end
 
     def create
-        city = State.cities.new(city_params)
-        
+        city = City.new(city_params)
+        city.save
+        render json: CitySerializer.new(city)
     end
 
     private
 
     def city_params
-        params.require(:city).permit(:name,:zipcode,:title,:description)
+        params.require(:city).permit(:name,:zipcode,:title,:description, :state_id)
     end
 end
