@@ -3,12 +3,21 @@ class Cities {
         this.cities = []
         this.adapter = new CitiesAdapter()
         // this.bindEventListeners()
-        this.fetchAndLoadNotes()
+        this.fetchAndLoadCities()
     }
 
-    fetchAndLoadNotes() {
+    fetchAndLoadCities() {
         this.adapter.getCities().then(cities => {
-            console.log(cities)
+            cities.data.forEach(city => this.cities.push(city))
         })
+        .then(() => {
+            this.render()
+        })
+    }
+
+    render() {
+        const citiesContainer = document.getElementById('city-card-container')
+        citiesContainer.innerHTML = `Hi`
+        
     }
 }
