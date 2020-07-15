@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
     <title>My Favorite Cities</title>
   </head>
   <body>
@@ -13,20 +14,20 @@
     </div>
     <div class="form">
       <h2>Add a City and Experience</h2>
-      <form id="new-city-form" class="hidden">
+      <form id="new-city-form" >
         <label for="city-name">City Name:</label><br>
         <input type="text" name="city-name"><br>
         <label for="zipcode">Enter Zip</label><br>
         <input type="text" name="zipcode"><br>
         <label for="title">Enter Title</label><br>
         <input type="text" name="title"><br>
-        <label for="description">Description</label><br>
-        <textarea name= "description" name="description" placeholder="Describe your experience"></textarea>
+        <label for="description">Description</label><br><br>
+        <textarea name="description" name="description" placeholder="Describe your experience"></textarea>
         <input id="form-submit" type="submit" value="Add City">
       </form>
     </div>
     <div id="city-card-container">
-      </div>
+    </div>
     <script type="application/javascript" src="./src/city.js" charset="UTF-8"></script>
     <script type="application/javascript" src="./src/cityRetriever.js" charset="UTF-8"></script>
     <!-- <script type="application/javascript" src="./src/index.js" charset="UTF-8"></script>  -->
