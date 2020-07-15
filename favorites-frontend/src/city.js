@@ -6,7 +6,7 @@ class Cty {
         this.zipcode = city.zipcode;
         this.title = city.title;
         this.description = city.description;
-        // this.states = city.states;
+        this.states = city.states;
     }
 
     renderCity() {
@@ -15,7 +15,7 @@ class Cty {
     }
 }
 
-function getCities() {
+ getCities=() => {
     fetch(`${BASE_URL}/cities`)
 .then(resp => resp.json())
 .then(data => {

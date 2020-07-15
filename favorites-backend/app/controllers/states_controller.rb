@@ -8,4 +8,6 @@ class StatesController < ApplicationController
         state = State.find_by(id: params[:id])
         render json: StateSerializer.new(state)
     end
+
+    
 end

@@ -2,9 +2,7 @@
 const STATES_URL = `${BASE_URL}/states`
 const CITIES_URL = `${BASE_URL}/cities`
 
-window.addEventListener('load', ()=> {
-    getStates()
-})
+
 
 function getStates() {
    
@@ -25,5 +23,5 @@ function getStates() {
 
 }
     
-
+getStates();
 
