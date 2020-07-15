@@ -15,6 +15,12 @@ class CitiesController < ApplicationController
         render json: CitySerializer.new(city)
     end
 
+    def update
+        city = City.find_by(id: params[:id])
+        city.update(city_params)
+        render json: CitySerializer.new(city)
+    end
+
     private
 
     def city_params
