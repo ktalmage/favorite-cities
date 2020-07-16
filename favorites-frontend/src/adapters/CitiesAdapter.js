@@ -12,7 +12,7 @@ class CitiesAdapter {
            zipcode: value,
            title: value,
            description: value,
-           state: value,
+           state_id: value,
        }
        
         return fetch(this.baseUrl,{

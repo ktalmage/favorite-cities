@@ -1,16 +1,11 @@
 const BASE_URL = ('http://127.0.0.1:3000')
 const STATES_URL = `${BASE_URL}/states`
 
-class State {
-    constructor(stateJSON) {
-    this.id = stateJSON.id
-    this.name = stateJSON.attributes.name
-    this.code = stateJSON.attributes.code
-}
 
 
 
-getStates() {
+
+function getStates() {
    
     return fetch(STATES_URL)
     .then(resp => resp.json())
@@ -26,8 +21,9 @@ getStates() {
         }
         document.querySelector('#filter-drop-down').appendChild(stateSelect)
     })
+}
 
-}
+getStates()
     
-getStates();
-}
+
+

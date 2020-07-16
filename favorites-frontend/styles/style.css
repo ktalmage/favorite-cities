@@ -1,21 +1,23 @@
 body {
   background-color: lightblue;
+  background-image: url('https://cutewallpaper.org/21/aesthetic-2560x1440-wallpapers/Stunning-Aesthetic-Desktop-Wallpaper-images-For-Free-.jpg');
+  background-repeat: cover;
 }
 
 h1 {
-  color: rgba(192, 58, 58, 0.884);
+  color: rgba(217, 231, 17, 0.884);
   text-align: center;
 }
 
 h2 {
-  color: rgba(192, 58, 58, 0.884);
+  color: rgba(217, 231, 17, 0.884);
   font-family: verdana;
   font-size: 20px;
   word-wrap: break-word;
 }
 
 h3 {
-  color: rgba(192, 58, 58, 0.884);
+  color:  rgba(217, 231, 17, 0.884);
   font-family: verdana;
   font-size: 20px;
   text-align: center;
@@ -28,8 +30,10 @@ div {
 }
 
 h4,textarea {
+  color:  rgba(217, 231, 17, 0.884);
   word-wrap: break-word;
   font-size: 15px;
+  
 }
 
 div.card {
@@ -42,3 +46,6 @@ div.card {
   align-self: center;
 }
 
+form {
+  color:  rgba(217, 231, 17, 0.884);
+}
