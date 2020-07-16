@@ -1,7 +1,16 @@
 const BASE_URL = ('http://127.0.0.1:3000')
 const STATES_URL = `${BASE_URL}/states`
 
-function getStates() {
+class State {
+    constructor(stateJSON) {
+    this.id = stateJSON.id
+    this.name = stateJSON.attributes.name
+    this.code = stateJSON.attributes.code
+}
+
+
+
+getStates() {
    
     return fetch(STATES_URL)
     .then(resp => resp.json())
@@ -21,4 +30,4 @@ function getStates() {
 }
     
 getStates();
-
+}

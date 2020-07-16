@@ -16,8 +16,12 @@ class Cities {
     createCity(event) {
         event.preventDefault()
         const value = this.newcityName.value
+        console.log(value)
         this.adapter.createCities(value).then(city => {
+            console.log(city)
+            
             this.cities.push(new City(city))
+
             this.render()
         })
     }

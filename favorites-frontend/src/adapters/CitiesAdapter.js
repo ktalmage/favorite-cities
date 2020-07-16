@@ -7,19 +7,22 @@ class CitiesAdapter {
     }
 
     createCities(value) {
-        const city = {
-            body: value
-        }
+       const city = {
+           name: value,
+           zipcode: value,
+           title: value,
+           description: value,
+           state: value,
+       }
        
         return fetch(this.baseUrl,{
             
             method: 'POST',
-            body: JSON.stringify({city: this.name}),
             headers: {
-            'Content-Type':'application/json',
-            'Accept':'application/json'
-            },
-           
+                'Content-Type':'application/json',
+                'Accept':'application/json'
+                },
+            body: JSON.stringify({city}),
         }).then(resp => resp.json())
     }
 }
