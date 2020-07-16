@@ -18,10 +18,16 @@ class Cities {
     }
 
     render() {
-        console.log(this.cities)
-        const citiesContainer = document.querySelector('#city-card-container')
-        citiesContainer.innerHTML = this.cities.map( c =>`<li>${c.name}</li>`)
         
         
+        let citiesCard = document.createElement('div')
+        citiesCard.innerHTML = this.cities.map( c =>`<div class='card'id='city-${c.id}'>
+        <h4>${c.state}</h4>
+        <h4>${c.name}</h4>
+        <h4>${c.zipcode}</h4>
+        <h4>${c.title}</h4>
+        <h4>${c.description}</h4>`)
+        
+        document.querySelector('#city-card-container').appendChild(citiesCard)
     }
 }

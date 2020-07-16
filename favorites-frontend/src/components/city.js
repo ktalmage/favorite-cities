@@ -7,6 +7,8 @@ class City {
         this.name = cityJSON.attributes.name
         this.zipcode = cityJSON.attributes.zipcode
         this.state = cityJSON.attributes.state.name
+        this.title = cityJSON.attributes.title
+        this.description = cityJSON.attributes.description
         
     }
 }
