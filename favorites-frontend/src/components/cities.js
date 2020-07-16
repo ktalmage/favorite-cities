@@ -18,8 +18,6 @@ class Cities {
     }
 
     render() {
-        
-        
         let citiesCard = document.createElement('div')
         citiesCard.innerHTML = this.cities.map( c =>`<div class='card'id='city-${c.id}'>
         <h4>${c.state}</h4>
