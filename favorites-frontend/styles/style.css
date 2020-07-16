@@ -34,10 +34,11 @@ h4,textarea {
 
 div.card {
   background-color: #eeeeee;
-  height: 250px;
+  height: 250;
   width: 300px;
   box-shadow: 10px 10px rgb(158, 53, 53);
   padding: 10px;
   border-radius: 10px;
-  word-wrap: break-word;
+  align-self: center;
 }
+

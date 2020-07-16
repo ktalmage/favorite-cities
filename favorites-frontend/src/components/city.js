@@ -2,7 +2,6 @@
 // const CITIES_URL = `${BASE_URL}/cities`
 class City {
     constructor(cityJSON) {
-       
         this.id = cityJSON.id
         this.name = cityJSON.attributes.name
         this.zipcode = cityJSON.attributes.zipcode
@@ -11,44 +10,15 @@ class City {
         this.description = cityJSON.attributes.description
         
     }
-}
-//     createCityCard() {
-        
-//         const card = document.createElement('div')
-//         card.className = "card"
-//         const cardInfo = document.createElement('div')
-//         cardInfo.className = "card-info"
-//         const stateCity = document.createElement('h1')
-//         stateCity.innerHTML = this.state
-//         cardInfo.appendChild(stateCity)
-//         const name = document.createElement('h1')
-//         name.innerHTML = this.name
-//         cardInfo.appendChild(name)
-//         const zipcode = document.createElement('h1')
-//         zipcode.innerHTML = this.zipcode
-//         cardInfo.appendChild(zipcode)
-//         const title = document.createElement('h1')
-//         title.innerHTML = this.title
-//         cardInfo.appendChild(title)
-//         const description = document.createElement('h1')
-//         description.innerHTML = this.description
-//         cardInfo.appendChild(description)
-//         card.appendChild(cardInfo)
-//         document.querySelector('#city-card-container').appendChild(card)
-//     }
-//     addCitiesToDom() {
-//         for (let city of this.cities) {
-//           city.createCityCard()
-//         }
-//       }
-//     getCitiesLoaded() {
-//         this.adapter.getCities().then(cities => this.createCities(cities)).then(() => this.addCitiesToDom())
-//     }
 
-//     createCities(cities) {
-//         for (let city of cities) {
-//             return new City(this.name,this.zipcode,this.title,this.description)
-//         }
-//     }
-// }
+    renderCard() {
+        return `<div class='card'id='city-${this.id}'>
+        State:<h4>${this.state}</h4>
+        City:<h4>${this.name}</h4>
+        Zipcode:<h4>${this.zipcode}</h4>
+        Title:<h4>${this.title}</h4>
+        Experience:<h4>${this.description}</h4>`
+    }
+}
+
 
