@@ -1,9 +1,12 @@
 // const BASE_URL = ('http://127.0.0.1:3000')
 // const CITIES_URL = `${BASE_URL}/cities`
 class City {
-    constuctor(cityJSON) {
+    constructor(cityJSON) {
+       
         this.id = cityJSON.id
-        this.body = cityJSON.body
+        this.name = cityJSON.attributes.name
+        this.zipcode = cityJSON.attributes.zipcode
+        this.state = cityJSON.attributes.state.name
         
     }
 }

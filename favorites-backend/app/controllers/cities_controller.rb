@@ -21,6 +21,12 @@ class CitiesController < ApplicationController
         render json: CitySerializer.new(city)
     end
 
+    def destroy
+        city = City.find_by(id: params[:id])
+        city.destroy
+        render json: city.id
+    end
+
     private
 
     def city_params

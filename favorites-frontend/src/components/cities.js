@@ -8,8 +8,9 @@ class Cities {
 
     fetchAndLoadCities() {
         this.adapter.getCities().then(cities => {
-           cities.data.forEach(city => this.cities.push(new City(city)))
-            
+           
+            cities.data.forEach(city => this.cities.push(new City(city)))
+
         })
         .then(() => {
             this.render()
@@ -18,9 +19,8 @@ class Cities {
 
     render() {
         console.log(this.cities)
-        debugger
         const citiesContainer = document.querySelector('#city-card-container')
-        citiesContainer.innerHTML = `<li>${this.body}</li>`
+        citiesContainer.innerHTML = this.cities.map( c =>`<li>${c.name}</li>`)
         
         
     }
