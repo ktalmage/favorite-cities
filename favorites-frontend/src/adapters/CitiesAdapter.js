@@ -22,7 +22,8 @@ class CitiesAdapter {
                 'Content-Type':'application/json',
                 'Accept':'application/json'
                 },
-            body: JSON.stringify({city}),
+            body: JSON.stringify(city),
         }).then(resp => resp.json())
+        
     }
 }

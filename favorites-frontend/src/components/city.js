@@ -2,7 +2,10 @@
 // const CITIES_URL = `${BASE_URL}/cities`
 class City {
     constructor(cityJSON) {
-        this.id = cityJSON.id
+        
+        if (cityJSON.id) {
+            this.id = cityJSON.id
+        }
         this.name = cityJSON.attributes.name
         this.zipcode = cityJSON.attributes.zipcode
         this.state = cityJSON.attributes.state.name
@@ -17,7 +20,9 @@ class City {
         City:<h4>${this.name}</h4>
         Zipcode:<h4>${this.zipcode}</h4>
         Title:<h4>${this.title}</h4>
-        Experience:<h4>${this.description}</h4>`
+        Experience:<h4>${this.description}</h4>
+        <button type="button" class="deletebtn" id= ${this.id}>Delete</button>
+        `
     }
 }
 

@@ -10,7 +10,6 @@ class CitiesController < ApplicationController
     end
 
     def create
-      
         city = City.new(city_params)
         city.save
         render json: CitySerializer.new(city)

@@ -9,13 +9,13 @@ function getStates() {
    
     return fetch(STATES_URL)
     .then(resp => resp.json())
-    .then(function(data) {
+    .then(data => {
         let states = data.data;
-        states.map(state => state.attributes.name)
+        // states.map(state => state.attributes.name)
         let stateSelect = document.createElement('select')
         for (let state of states) {
             let option = document.createElement('option');
-            option.value = state.attributes.name
+            option.value = state.id
             option.text = state.attributes.name
             stateSelect.appendChild(option)
         }

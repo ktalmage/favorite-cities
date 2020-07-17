@@ -15,12 +15,20 @@ class Cities {
 
     createCity(event) {
         event.preventDefault()
-        const value = this.newcityName.value
-        console.log(value)
+        const value = {
+            state_id: event.target.parentElement.querySelector('#filter-drop-down').value,
+            name: event.target.querySelector('#new-city-name').value,
+            zipcode: event.target.querySelector('#new-zipcode').value,
+            title: event.target.querySelector('#new-title').value,
+            description: event.target.querySelector('#new-description').value
+        }
+        
+        
         this.adapter.createCities(value).then(city => {
-            console.log(city)
-            
-            this.cities.push(new City(city))
+            console.log(city.data)
+            let newCity = new City(city.data)
+            console.log(newCity)
+            this.cities.push(newCity)
 
             this.render()
         })

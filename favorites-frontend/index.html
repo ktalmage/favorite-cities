@@ -9,20 +9,21 @@
     <div class= "container">
       <h1 id="title">Favorite Cities</h1>
     </div>
-    <div id="filter-drop-down" >
-      <h2>Choose a State:</h2>
-    </div>
+   
     <div class="form">
       <h2>Add a City and Experience</h2>
       <form id="new-city-form" >
+        <div id="filter-drop-down" >
+          <h2>Choose a State:</h2>
+        </div>
         <label for="city-name">City Name:</label><br>
         <input type="text" name="city-name" id="new-city-name" ><br>
         <label for="zipcode">Enter Zip</label><br>
-        <input type="text" name="zipcode" ><br>
+        <input type="text" name="zipcode" id="new-zipcode" ><br>
         <label for="title">Enter Title</label><br>
-        <input type="text" name="title"><br>
+        <input type="text" name="title" id="new-title"><br>
         <label for="description">Description</label><br><br>
-        <textarea name="description" name="description" placeholder="Describe your experience"></textarea>
+        <textarea name="description" name="description" placeholder="Describe your experience" id="new-description"></textarea>
         <input id="form-submit" type="submit" value="Add City">
       </form>
     </div>
