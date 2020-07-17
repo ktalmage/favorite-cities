@@ -12,16 +12,16 @@ class CitiesAdapter {
            zipcode: value.zipcode,
            title: value.title,
            description: value.description,
-           state_id: value.state,
+           state_id: value.state_id,
            
        }
        
         return fetch(this.baseUrl,{
             
-            method: 'POST',
+            method: 'post',
             headers: {
-                'Content-Type':'application/json',
-                'Accept':'application/json'
+                "Content-Type":"application/json",
+                "Accept":"application/json"
                 },
             body: JSON.stringify(city),
         }).then(resp => resp.json())

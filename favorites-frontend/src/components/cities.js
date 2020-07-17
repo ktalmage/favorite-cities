@@ -16,20 +16,20 @@ class Cities {
     createCity(event) {
         event.preventDefault()
         const value = {
-            state_id: event.target.parentElement.querySelector('#filter-drop-down').value,
-            name: event.target.querySelector('#new-city-name').value,
-            zipcode: event.target.querySelector('#new-zipcode').value,
-            title: event.target.querySelector('#new-title').value,
-            description: event.target.querySelector('#new-description').value
+            state_id: event.target[0].value,
+            name: event.target[1].value,
+            zipcode: event.target[2].value,
+            title: event.target[3].value,
+            description: event.target[4].value
         }
         
         this.adapter.createCities(value).then(city => {
-            console.log(city.data)
+           
             let newCity = new City(city.data)
             console.log(newCity)
-            this.cities.push(newCity)
+            // this.cities.push(newCity)
 
-            this.render()
+        document.querySelector('#city-card-container').innerHTML += newCity.renderCard()
         })
     }
 
@@ -43,8 +43,9 @@ class Cities {
     }
 
     render() {
-        let citiesCard = document.createElement('div')
-        citiesCard.innerHTML = this.cities.map( c => c.renderCard()).join('')
-        document.querySelector('#city-card-container').appendChild(citiesCard)
+        let citiesContainer = document.querySelector('#city-card-container')
+        citiesContainer.innerHTML ="" 
+        this.cities.forEach( c => citiesContainer.innerHTML += c.renderCard())
+       
     }
 }
