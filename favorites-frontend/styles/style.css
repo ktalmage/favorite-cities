@@ -37,7 +37,7 @@ h4,textarea {
 }
 
 div.card {
-  background-color: #eeeeee;
+  background-color: #eeeeee50;
   height: 250;
   width: 300px;
   box-shadow: 10px 10px rgb(158, 53, 53);
