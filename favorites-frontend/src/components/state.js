@@ -11,7 +11,6 @@ function getStates() {
     .then(resp => resp.json())
     .then(data => {
         let states = data.data;
-        // states.map(state => state.attributes.name)
         let stateSelect = document.createElement('select')
         for (let state of states) {
             let option = document.createElement('option');

@@ -6,6 +6,7 @@ class City {
         if (cityJSON.id) {
             this.id = cityJSON.id
         }
+        
         this.name = cityJSON.attributes.name
         this.zipcode = cityJSON.attributes.zipcode
         this.state = cityJSON.attributes.state.name

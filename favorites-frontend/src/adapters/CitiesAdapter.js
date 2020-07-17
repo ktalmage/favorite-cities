@@ -8,11 +8,12 @@ class CitiesAdapter {
 
     createCities(value) {
        const city = {
-           name: value,
-           zipcode: value,
-           title: value,
-           description: value,
-           state_id: value,
+           name: value.name,
+           zipcode: value.zipcode,
+           title: value.title,
+           description: value.description,
+           state_id: value.state,
+           
        }
        
         return fetch(this.baseUrl,{

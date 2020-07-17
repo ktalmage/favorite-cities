@@ -23,7 +23,6 @@ class Cities {
             description: event.target.querySelector('#new-description').value
         }
         
-        
         this.adapter.createCities(value).then(city => {
             console.log(city.data)
             let newCity = new City(city.data)

@@ -10,6 +10,7 @@ class CitiesController < ApplicationController
     end
 
     def create
+        State.find_by(id: params[:state_id])
         city = City.new(city_params)
         city.save
         render json: CitySerializer.new(city)
