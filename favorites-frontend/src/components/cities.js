@@ -34,14 +34,20 @@ class Cities {
         })
     }
 
+    clearCities() {
+        let clearOut = document.querySelectorAll('#city-id')
+        clearOut.innerHTML = ""
+    }
     deleteCity(event) {
+        
+        this.clearCities()
         let id = event.target.id
         fetch(`http://127.0.0.1:3000/cities/${id}`, {
             method: 'DELETE'
         })
         .then(resp => resp.json())
         .then(() => {
-            this.fetchAndLoadCities() 
+            this.adapter.getCities() 
         })
     }
     fetchAndLoadCities() {
