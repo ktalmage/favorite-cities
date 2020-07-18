@@ -24,6 +24,8 @@ class City {
         <button type="button" class="deletebtn" id= ${this.id}>Delete</button>
         `
     }
+
+    
 }
 
 

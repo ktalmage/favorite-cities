@@ -11,6 +11,7 @@ class Cities {
         this.newcityName = document.getElementById('new-city-name')
         this.cityForm = document.getElementById('new-city-form')
         this.cityForm.addEventListener('submit', this.createCity.bind(this))
+        this.citiesCard.addEventListener('click', this.deleteCity.bind(this))
     }
 
     createCity(event) {
@@ -27,12 +28,22 @@ class Cities {
            
             let newCity = new City(city.data)
             console.log(newCity)
-            // this.cities.push(newCity)
+            
 
         document.querySelector('#city-card-container').innerHTML += newCity.renderCard()
         })
     }
 
+    deleteCity(event) {
+        let id = event.target.id
+        fetch(`http://127.0.0.1:3000/cities/${id}`, {
+            method: 'DELETE'
+        })
+        .then(resp => resp.json())
+        .then(() => {
+            this.fetchAndLoadCities() 
+        })
+    }
     fetchAndLoadCities() {
         this.adapter.getCities().then(cities => {
            cities.data.forEach(city => this.cities.push(new City(city)))
@@ -48,4 +59,8 @@ class Cities {
         this.cities.forEach( c => citiesContainer.innerHTML += c.renderCard())
        
     }
+
+    
+
+   
 }

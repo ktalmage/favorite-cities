@@ -7,6 +7,7 @@ class CitiesController < ApplicationController
     def show
         city = City.find_by(id: params[:id])
         render json: CitySerializer.new(city)
+        
     end
 
     def create
@@ -25,7 +26,7 @@ class CitiesController < ApplicationController
     def destroy
         city = City.find_by(id: params[:id])
         city.destroy
-        render json: city.id
+        render json: city
     end
 
     private
