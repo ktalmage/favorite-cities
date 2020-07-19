@@ -15,7 +15,7 @@ class Cities {
     }
 
     createCity(event) {
-        event.preventDefault()
+        // event.preventDefault()
         const value = {
             state_id: event.target[0].value,
             name: event.target[1].value,
@@ -28,27 +28,27 @@ class Cities {
            
             let newCity = new City(city.data)
             console.log(newCity)
-            
-
-        document.querySelector('#city-card-container').innerHTML += newCity.renderCard()
+            document.querySelector('#city-card-container').innerHTML += newCity.renderCard()
+        
         })
     }
 
     clearCities() {
-        let clearOut = document.querySelectorAll('#city-id')
+        let clearOut = document.querySelector('#city-card-container')
         clearOut.innerHTML = ""
     }
     deleteCity(event) {
+       event.preventDefault()
+        // this.clearCities()
+        fetch(`http://127.0.0.1:3000/cities/${event.target.id}`, {
+            method: 'DELETE',
+            headers: {'Content-Type':'application/json',
+                      'Accept': 'application/json'
+                    }
+        })
+        .then(event.target.parentElement.remove())
+            
         
-        this.clearCities()
-        let id = event.target.id
-        fetch(`http://127.0.0.1:3000/cities/${id}`, {
-            method: 'DELETE'
-        })
-        .then(resp => resp.json())
-        .then(() => {
-            this.adapter.getCities() 
-        })
     }
     fetchAndLoadCities() {
         this.adapter.getCities().then(cities => {
