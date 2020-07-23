@@ -10,9 +10,32 @@ class Cities {
         this.citiesCard = document.getElementById('city-card-container')
         this.newcityName = document.getElementById('new-city-name')
         this.cityForm = document.getElementById('new-city-form')
+        this.zipSearch = document.getElementById('city-search')
         this.cityForm.addEventListener('submit', this.createCity.bind(this))
         this.citiesCard.addEventListener('click', this.deleteCity.bind(this))
+        this.zipSearch.addEventListener('submit', this.search.bind(this))
+            
+        
+        
     }
+
+    search(event) {
+        event.preventDefault()
+        const input = event.target[0].value
+        const cityTest = this.cities.filter(city => city.zipcode === input)
+        this.searchResults(cityTest)
+
+
+        
+    }
+
+    searchResults(cities) {
+        event.preventDefault()
+        const results = cities.map(city => 
+            city.renderCard()).join('');
+            this.citiesCard.innerHTML = results
+    }
+
 
     createCity(event) {
         event.preventDefault()
@@ -37,6 +60,8 @@ class Cities {
         
         })
     }
+
+    
 
     clearCities() {
         let clearOut = document.querySelector('#city-card-container')
