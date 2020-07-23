@@ -15,7 +15,7 @@ class Cities {
     }
 
     createCity(event) {
-        // event.preventDefault()
+        event.preventDefault()
         const value = {
             state_id: event.target[0].value,
             name: event.target[1].value,
@@ -27,7 +27,12 @@ class Cities {
         this.adapter.createCities(value).then(city => {
            
             let newCity = new City(city.data)
-            console.log(newCity)
+            console.log(this)
+            // Clear form
+            this.cityForm.querySelector('#new-city-name').value = ""
+            this.cityForm.querySelector('#new-zipcode').value = ""
+            this.cityForm.querySelector('#new-title').value = ""
+            this.cityForm.querySelector('#new-description').value = ""
             document.querySelector('#city-card-container').innerHTML += newCity.renderCard()
         
         })
