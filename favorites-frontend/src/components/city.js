@@ -21,7 +21,8 @@ class City {
         Zipcode:<h4>${this.zipcode}</h4>
         Title:<h4>${this.title}</h4>
         Experience:<h4>${this.description}</h4>
-        <button type="button" class="deletebtn" id= ${this.id}>Delete</button>
+        <button type="button" class="deletebtn"id=${this.id}>Delete</button>
+        </div>
         `
     }
 
