@@ -15,18 +15,12 @@ class Cities {
         this.citiesCard.addEventListener('click', this.deleteCity.bind(this))
         this.zipSearch.addEventListener('submit', this.search.bind(this))
             
-        
-        
     }
 
     search(event) {
         event.preventDefault()
-        const input = event.target[0].value
-        const cityTest = this.cities.filter(city => city.zipcode === input)
+        const cityTest = this.cities.filter(city => city.zipcode === event.target[0].value)
         this.searchResults(cityTest)
-
-
-        
     }
 
     searchResults(cities) {
@@ -57,7 +51,7 @@ class Cities {
             this.cityForm.querySelector('#new-title').value = ""
             this.cityForm.querySelector('#new-description').value = ""
             document.querySelector('#city-card-container').innerHTML += newCity.renderCard()
-        
+            this.cities.push(newCity)
         })
     }
 
